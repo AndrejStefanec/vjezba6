@@ -3,36 +3,7 @@
 #include <string>
 #include <vector>
 
-int main(int argc, char* argv[]) {
-    if (argc != 3) {
-        std::cerr << "Upotreba: " << argv[0] << " ulazna_datoteka izlazna_datoteka\n";
-        return 1;
-    }
-
-    std::ifstream ulaznaDatoteka(argv[1]);
-    if (!ulaznaDatoteka) {
-        std::cerr << "Greska pri otvaranju ulazne datoteke!\n";
-        return 1;
-    }
-
-    std::ofstream izlaznaDatoteka(argv[2]);
-    if (!izlaznaDatoteka) {
-        std::cerr << "Greska pri otvaranju izlazne datoteke!\n";
-        return 1;
-    }
-
-    std::vector<std::string> redovi;
-    std::string linija;
-    int maxLinija = 20;
-
-    while (std::getline(ulaznaDatoteka, linija) && redovi.size() < maxLinija) {
-        redovi.push_back(linija);
-    }
-
-    for (const auto& red : redovi) {
-        izlaznaDatoteka << red << "\n";
-        izlaznaDatoteka << red << "\n";
-    }
+int m
 
     std::cout << "Obrada zavrsena. " << redovi.size()
               << " redaka zapisano po dva puta u " << argv[2] << "\n";
